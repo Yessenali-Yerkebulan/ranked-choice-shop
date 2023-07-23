@@ -1,0 +1,60 @@
+{
+    "symfony/console": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.1",
+            "ref": "c6d02bdfba9da13c22157520e32a602dbee8a75c"
+        },
+        "files": [
+            "./bin/console"
+        ]
+    },
+    "symfony/flex": {
+        "version": "1.20",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "146251ae39e06a95be0fe3d13c807bcf3938b172"
+        },
+        "files": [
+            "./.env"
+        ]
+    },
+    "symfony/framework-bundle": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.2",
+            "ref": "ffefb327a5300bbf5ff7ed586afe17d9b507c7c5"
+        },
+        "files": [
+            "./config/packages/cache.yaml",
+            "./config/packages/framework.yaml",
+            "./config/packages/test/framework.yaml",
+            "./config/preload.php",
+            "./config/routes/dev/framework.yaml",
+            "./config/services.yaml",
+            "./public/index.php",
+            "./src/Controller/.gitignore",
+            "./src/Kernel.php"
+        ]
+    },
+    "symfony/routing": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.1",
+            "ref": "8c5b5f86ec3e4547cec9a3ae30c3b40ae51cab1f"
+        },
+        "files": [
+            "./config/packages/prod/routing.yaml",
+            "./config/packages/routing.yaml",
+            "./config/routes.yaml"
+        ]
+    }
+}
