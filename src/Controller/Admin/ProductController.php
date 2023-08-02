@@ -42,6 +42,7 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+            dd($product);
             $entityManager = $this->getDoctrine()->getManager();
 
             $entityManager->persist($product);
