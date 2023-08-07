@@ -16,11 +16,16 @@ class ProductManager
      * @var string
      */
     private $productImagesDir;
+    /**
+     * @var ProductImageManager
+     */
+    private $productImageManager;
 
-    public function __construct(EntityManagerInterface $entityManager, string $productImagesDir){
+    public function __construct(EntityManagerInterface $entityManager, ProductImageManager $productImageManager, string $productImagesDir){
 
         $this->entityManager = $entityManager;
         $this->productImagesDir = $productImagesDir;
+        $this->productImageManager = $productImageManager;
     }
 
     /**
@@ -62,6 +67,7 @@ class ProductManager
 
 
         $productImage = $this->productImageManager->saveImageForProduct($productDir, $tempImageFilename);
+        $productImage->setProduct($product);
         $product->addProductImage($productImage);
         return $product;
     }

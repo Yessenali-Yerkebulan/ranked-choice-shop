@@ -40,18 +40,17 @@ class ProductFormHandler
         // 1. Save product's changes (+)
         // 2. Save uploaded file into temp folder (+)
 
-        // 3. Work with Product (addProductImage) and ProductImage
-        // 3.1 Get path of folder with images of product
+        // 3. Work with Product (addProductImage) and ProductImage (+)
+        // 3.1 Get path of folder with images of product (+)
 
-        // 3.2 Work with ProductImage
-        // 3.2.1 Resize and save image into folder(BIG, MIDDLE, SMALL)
-        // 3.2.2 Create ProductImage and return it to Product
+        // 3.2 Work with ProductImage (+)
+        // 3.2.1 Resize and save image into folder(BIG, MIDDLE, SMALL) (+)
+        // 3.2.2 Create ProductImage and return it to Product (+)
 
-        // 3.3 Save Product with new ProductImage
+        // 3.3 Save Product with new ProductImage (+)
 
-        dd($product, $form->get('newImage')->getData());
-        $this->productManager->save();
-
+        $this->productManager->save($product);
+        dd($product);
         return $product;
     }
 }
