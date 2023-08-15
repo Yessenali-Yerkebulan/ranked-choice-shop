@@ -97,9 +97,9 @@
                             <img src="{{ asset('uploads/images/products/' ~ product.id ~ '/' ~ image.filenameMiddle) }}" alt="{{ image.filenameMiddle }}">
                         </div>
                         <div class="col-md-7">
-{#                            <a href="{{ path('admin_product_image_delete', {'id': image.id}) }}" class="btn btn-outline-info">#}
-{#                                DELETE#}
-{#                            </a>#}
+                            <a href="{{ path('admin_product_image_delete', {'id': image.id}) }}" class="btn btn-outline-info">
+                                DELETE
+                            </a>
                         </div>
                     </div>
                 {% endfor %}
