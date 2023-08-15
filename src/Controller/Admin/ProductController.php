@@ -40,6 +40,10 @@ class ProductController extends AbstractController
         }else{
             $product = new Product();
         }
+
+        if(!$product){
+            $product = new Product();
+        }
         $form = $this->createForm(EditProductFormType::class, $product);
         $form->handleRequest($request);
 
@@ -49,8 +53,12 @@ class ProductController extends AbstractController
             return $this->redirectToRoute('admin_product_edit', ['id'=>$product->getId()]);
         }
 
+        $images = $product->getProductImages()
+            ? $product->getProductImages()->getValues()
+            : [];
+
         return $this->render('admin/product/edit.html.twig', [
-            'images'=>$product->getProductImages()->getValues(),
+            'images'=>$images,
             'product'=>$product,
             'form'=>$form->createView()
         ]);
